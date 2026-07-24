@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 public class PokemonService {
 
     public Pokemon classificar(Pokemon pokemon){
+        boolean isLendario = Boolean.TRUE.equals(pokemon.getLendario());
 
-        if (pokemon.getLevel() >=50 || pokemon.getLendario()){
+        if (pokemon.getLevel() >=50 && isLendario){
             //classifa como forte
             pokemon.setClassificacao("PODEROSO");
             pokemon.setMensagem("Parabens voce tem um pokemon extremamente poderoso!");
